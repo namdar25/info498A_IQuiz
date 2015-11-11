@@ -12,10 +12,12 @@ class QuestionDTO {
     let question: String
     let correctAnswer: Int
     let answers: [String]
+    var wasAnsweredCorrect: Bool
     
     init (question: String, correctAnswer: Int, answers: [String]) {
         self.question = question
         self.correctAnswer = correctAnswer
         self.answers = answers
+        wasAnsweredCorrect = false
     }
 }
