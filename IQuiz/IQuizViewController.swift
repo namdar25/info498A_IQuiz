@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class IQuizViewController: UITableViewController {
 
     var quizCellArray: [QuizCellDTO]?
     
@@ -27,11 +27,6 @@ class ViewController: UITableViewController {
         let quizDTO3: QuizCellDTO = QuizCellDTO(quizTitle: "Science", quizDescription: "real stuff")
        
         quizCellArray = [quizDTO1, quizDTO2, quizDTO3]
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
