@@ -11,9 +11,11 @@ import Foundation
 class QuizCellDTO {
     let quizTitle: String
     let quizDescription: String
+    let questionDTOs: [QuestionDTO]
     
-    init (quizTitle: String, quizDescription: String) {
+    init (quizTitle: String, quizDescription: String, questionDTOs: [QuestionDTO]) {
         self.quizTitle = quizTitle
         self.quizDescription = quizDescription
+        self.questionDTOs = questionDTOs
     }
 }

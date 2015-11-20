@@ -33,16 +33,11 @@ class QuestionViewController: UITableViewController {
     var answers: [String]!
     let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     var lastNSIndexPath: NSIndexPath!
-    var questionCellArray: [QuestionDTO]!
+    var quizDTO: QuizCellDTO?
   
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let questionDTO1: QuestionDTO = QuestionDTO(question: "tests bl", correctAnswer: 3, answers: ["blah","bluh","bleh","bloh"])
-        let questionDTO2: QuestionDTO = QuestionDTO(question: "tests cl", correctAnswer: 3, answers: ["clah","cluh","cleh","cloh"])
-        let questionDTO3: QuestionDTO = QuestionDTO(question: "tests fl", correctAnswer: 3, answers: ["flah","fluh","fleh","floh"])
-        
-        questionCellArray = [questionDTO1, questionDTO2, questionDTO3]
         setStuff()
         
         self.navigationItem.setHidesBackButton(true, animated: false)
@@ -51,6 +46,7 @@ class QuestionViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.tableView.reloadData()
         setStuff()
         lastNSIndexPath = nil
@@ -77,7 +73,7 @@ class QuestionViewController: UITableViewController {
         if segue.identifier == "questionToAnswer" {
             let answerViewController = segue.destinationViewController as! AnswerViewController
             answerViewController.didAnswerCorrectly = (correctAnswer == lastNSIndexPath.row)
-            questionCellArray[questionNumber-1].wasAnsweredCorrect = (correctAnswer == lastNSIndexPath.row)
+            quizDTO!.questionDTOs[questionNumber-1].wasAnsweredCorrect = (correctAnswer == lastNSIndexPath.row)
             answerViewController.currentQuestion = questionNumber
         }
     }
@@ -95,6 +91,7 @@ class QuestionViewController: UITableViewController {
             let questionLabelCell = cell as! QuestionLabelCell
             questionLabelCell.questionLabel.text = "Question:"
             questionLabelCell.questionText.text = question
+            questionLabelCell.questionText.lineBreakMode = NSLineBreakMode.ByWordWrapping
             return questionLabelCell
         } else {
             var cell = tableView.dequeueReusableCellWithIdentifier("Answer")
@@ -104,9 +101,9 @@ class QuestionViewController: UITableViewController {
             let answerCell = cell as! AnswerCell
             answerCell.answerLabel.text = String(alphabet[indexPath.row - 1])
             answerCell.answerText.text = answers[indexPath.row - 1]
+            answerCell.answerText.lineBreakMode = NSLineBreakMode.ByWordWrapping
             return answerCell
         }
-        
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -120,8 +117,8 @@ class QuestionViewController: UITableViewController {
     func setStuff () {
         self.title = "Question \(questionNumber)"
         
-        question = questionCellArray[questionNumber-1].question
-        correctAnswer = questionCellArray[questionNumber-1].correctAnswer
-        answers = questionCellArray[questionNumber-1].answers
+        question = quizDTO!.questionDTOs[questionNumber-1].question
+        correctAnswer = quizDTO!.questionDTOs[questionNumber-1].correctAnswer
+        answers = quizDTO!.questionDTOs[questionNumber-1].answers
     }
 }

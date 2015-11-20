@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1464C9821BFEC8050095EE28 /* QuizProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464C9811BFEC8050095EE28 /* QuizProxy.swift */; settings = {ASSET_TAGS = (); }; };
 		147DDBDD1BE9B1F9004A29F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DDBDC1BE9B1F9004A29F6 /* AppDelegate.swift */; };
 		147DDBDF1BE9B1F9004A29F6 /* IQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DDBDE1BE9B1F9004A29F6 /* IQuizViewController.swift */; };
 		147DDBE21BE9B1F9004A29F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147DDBE01BE9B1F9004A29F6 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1464C9811BFEC8050095EE28 /* QuizProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizProxy.swift; sourceTree = "<group>"; };
 		147DDBD91BE9B1F9004A29F6 /* IQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		147DDBDC1BE9B1F9004A29F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		147DDBDE1BE9B1F9004A29F6 /* IQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQuizViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				1489F9491BF2C5BA006FC85F /* QuestionDTO.swift */,
 				1489F94D1BF2C904006FC85F /* AnswerCell.swift */,
 				1489F94F1BF2CA5C006FC85F /* QuestionLabelCell.swift */,
+				1464C9811BFEC8050095EE28 /* QuizProxy.swift */,
 			);
 			path = IQuiz;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				1489F94A1BF2C5BA006FC85F /* QuestionDTO.swift in Sources */,
 				1489F9441BF2A152006FC85F /* QuestionViewController.swift in Sources */,
 				147DDC0F1BE9C93E004A29F6 /* QuizCell.swift in Sources */,
+				1464C9821BFEC8050095EE28 /* QuizProxy.swift in Sources */,
 				1489F94E1BF2C904006FC85F /* AnswerCell.swift in Sources */,
 				147DDBDF1BE9B1F9004A29F6 /* IQuizViewController.swift in Sources */,
 				1489F9501BF2CA5C006FC85F /* QuestionLabelCell.swift in Sources */,

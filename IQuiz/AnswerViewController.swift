@@ -14,13 +14,14 @@ class AnswerViewController: UIViewController {
     var didAnswerCorrectly = false
     var currentQuestion: Int = 1
     
+    var quizDTO: QuizCellDTO?
     
     @IBOutlet weak var answer: UILabel!
     
     @IBAction func next(sender: AnyObject) {
         let questionView = (self.navigationController?.viewControllers.count)! - 2
         let questionViewController = (self.navigationController?.viewControllers[questionView] as! QuestionViewController)
-        if currentQuestion < questionViewController.questionCellArray.count{
+        if currentQuestion < questionViewController.quizDTO!.questionDTOs.count{
             currentQuestion += 1
             questionViewController.questionNumber = currentQuestion
             self.navigationController?.popViewControllerAnimated(true)

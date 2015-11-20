@@ -14,6 +14,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var howTheyDid: UILabel!
     
+    
     @IBAction func nextQuiz(sender: UIButton) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
@@ -24,9 +25,9 @@ class ResultViewController: UIViewController {
         let questionView = (self.navigationController?.viewControllers.count)! - 3
         let questionViewController = (self.navigationController?.viewControllers[questionView] as! QuestionViewController)
         var numberCorrect: Int = 0
-        let numberOfQuestion = questionViewController.questionCellArray.count
+        let numberOfQuestion = questionViewController.quizDTO!.questionDTOs.count
         for var index = 0; index < numberOfQuestion; ++index {
-            if questionViewController.questionCellArray[index].wasAnsweredCorrect {
+            if questionViewController.quizDTO!.questionDTOs[index].wasAnsweredCorrect {
                 numberCorrect += 1
             }
         }
